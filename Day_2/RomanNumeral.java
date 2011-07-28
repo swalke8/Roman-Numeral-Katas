@@ -1,30 +1,26 @@
 import java.util.*;
 
 public class RomanNumeral {
-  private static Map<Integer,String> numbers = new HashMap<Integer,String>();
+  private static Map<Integer,String> romanNumerals = new HashMap<Integer,String>();
   static {
-    numbers.put(1, "I");
-    numbers.put(5, "V");
-    numbers.put(10, "X");
+    romanNumerals.put(1, "I");
+    romanNumerals.put(5, "V");
+    romanNumerals.put(10, "X");
   }
-  private static int [] arrayOfNumbers = {1, 5, 10};
+  private static final int [] romanNumeralValues = {10, 5, 1};
 
   public static String romanize(int number) {
     String numeral = new String();
-    for(int i = arrayOfNumbers.length-1; i >= 0; i--) {
-      while(number >= numberValue(i)) {
-        numeral = numeral.concat(numbers.get(numberValue(i)));
-        number -= numberValue(i);
+    for(int value : romanNumeralValues) {
+      while(number >= value) {
+        numeral = numeral.concat(romanNumerals.get(value));
+        number -= value;
       }
-      if(number > 0 && number == numberValue(i)-1) {
-        numeral = numeral.concat("I" + numbers.get(numberValue(i)));
+      if(number > 0 && number == value-1) {
+        numeral = numeral.concat("I" + romanNumerals.get(value));
         number = 0;
       }
     }
     return numeral;
-  }
-
-  private static int numberValue(int number) {
-    return arrayOfNumbers[number];
   }
 }
