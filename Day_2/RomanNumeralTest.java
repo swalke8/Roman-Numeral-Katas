@@ -31,4 +31,19 @@ public class RomanNumeralTest extends TestCase {
   public void test10() throws Exception {
     assertEquals("X", RomanNumeral.romanize(10));
   }
+  public void test11() throws Exception {
+    assertEquals("XI", RomanNumeral.romanize(11));
+  }
+  public void test14() throws Exception {
+    assertEquals("XIV", RomanNumeral.romanize(14));
+  }
+  public void test15() throws Exception {
+    assertEquals("XV", RomanNumeral.romanize(15));
+  }
+  public void test19() throws Exception {
+    assertEquals("XIX", RomanNumeral.romanize(19));
+  }
+  public void test20() throws Exception {
+    assertEquals("XX", RomanNumeral.romanize(20));
+  }
 }
