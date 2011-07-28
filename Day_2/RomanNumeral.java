@@ -7,7 +7,7 @@ public class RomanNumeral {
     numbers.put(5, "V");
     numbers.put(10, "X");
   }
-  private static Object [] arrayOfNumbers = (numbers.keySet()).toArray();
+  private static int [] arrayOfNumbers = {1, 5, 10};
 
   public static String romanize(int number) {
     String numeral = new String();
@@ -25,6 +25,6 @@ public class RomanNumeral {
   }
 
   private static int numberValue(int number) {
-    return (Integer)arrayOfNumbers[number];
+    return arrayOfNumbers[number];
   }
 }
