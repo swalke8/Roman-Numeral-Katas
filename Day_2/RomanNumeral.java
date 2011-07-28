@@ -18,7 +18,7 @@ public class RomanNumeral {
       }
       if(number > 0 && number == value-1) {
         numeral = numeral.concat("I" + romanNumerals.get(value));
-        number = 0;
+        return numeral;
       }
     }
     return numeral;
